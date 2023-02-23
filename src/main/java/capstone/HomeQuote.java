@@ -1,18 +1,19 @@
 package capstone;
 
 public class HomeQuote extends Quote {
-    private HomeOwner homeOwner;
-    private Home home;
-    private double liabilityLimit;
-    private double deductible;
-    private double contentsInsuranceLimit;
-    private double contentsDeductible;
-    private double basePremium;
-    private double tax;
+    private final HomeOwner homeOwner;
+    private final Home home;
+    private final double liabilityLimit;
+    private final double deductible;
+    private final double contentsInsuranceLimit;
+    private final double contentsDeductible;
+    private final double basePremium;
+    private final double tax;
 
     public HomeQuote(HomeOwner homeOwner, Home home,double totalPremium, double liabilityLimit,
                      double deductible, double contentsInsuranceLimit, double contentsDeductible) {
         super(homeOwner, totalPremium);
+        this.homeOwner = homeOwner;
         this.home = home;
         this.contentsInsuranceLimit = contentsInsuranceLimit;
         this.contentsDeductible = contentsDeductible;
@@ -26,68 +27,32 @@ public class HomeQuote extends Quote {
         return home;
     }
 
-    public void setHome(Home home) {
-        this.home = home;
-    }
-
     public double getLiabilityLimit() {
         return liabilityLimit;
-    }
-
-    public void setLiabilityLimit(double liabilityLimit) {
-        this.liabilityLimit = liabilityLimit;
     }
 
     public double getDeductible() {
         return deductible;
     }
 
-    public void setDeductible(double deductible) {
-        this.deductible = deductible;
-    }
-
     public double getContentsInsuranceLimit() {
         return contentsInsuranceLimit;
-    }
-
-    public void setContentsInsuranceLimit(double contentsInsuranceLimit) {
-        this.contentsInsuranceLimit = contentsInsuranceLimit;
     }
 
     public double getContentsDeductible() {
         return contentsDeductible;
     }
 
-    public void setContentsDeductible(double contentsDeductible) {
-        this.contentsDeductible = contentsDeductible;
-    }
-
-    @Override
     public double getBasePremium() {
         return basePremium;
     }
 
-    @Override
-    public void setBasePremium(double basePremium) {
-        this.basePremium = basePremium;
-    }
-
-    @Override
     public double getTax() {
         return tax;
     }
 
-    @Override
-    public void setTax(double tax) {
-        this.tax = tax;
-    }
-
     public HomeOwner getHomeOwner() {
         return homeOwner;
-    }
-
-    public void setHomeOwner(HomeOwner homeOwner) {
-        this.homeOwner = homeOwner;
     }
 }
 

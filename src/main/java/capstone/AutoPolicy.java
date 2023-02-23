@@ -36,7 +36,6 @@ public class AutoPolicy extends Policy {
         return deductible;
     }
 
-    @Override
     public Driver getDriver() {
         return driver;
     }

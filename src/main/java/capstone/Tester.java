@@ -7,7 +7,7 @@ public class Tester {
         Scanner input = new Scanner(System.in);
 
         Vehicle car = new Vehicle(2019, "Model S", "Tesla");
-        Driver person = new Driver(19, "1 A st, St.johns", 0);
+        Driver person = new Driver(19, "1 A st, St.johns", 1);
         AutoQuoteFactory auto = new AutoQuoteFactory(car, person);
         AutoQuote autoQuote = auto.createAutoQuote(input);
         System.out.println(autoQuote.getTotalPremium());

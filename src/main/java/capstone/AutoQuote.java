@@ -1,12 +1,12 @@
 package capstone;
 
 public class AutoQuote extends Quote{
-    private Driver driver;
-    private Vehicle vehicle;
-    private double liabilityLimit;
-    private double deductible;
-    private double basePremium;
-    private double tax;
+    private final Driver driver;
+    private final Vehicle vehicle;
+    private final double liabilityLimit;
+    private final double deductible;
+    private final double basePremium;
+    private final double tax;
 
     public AutoQuote(Driver driver, Vehicle vehicle, double liabilityLimit,
                      double deductible, double totalPremium) {
@@ -36,44 +36,17 @@ public class AutoQuote extends Quote{
         return deductible;
     }
 
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
-
-    public void setLiabilityLimit(double liabilityLimit) {
-        this.liabilityLimit = liabilityLimit;
-    }
-
-    public void setDeductible(double deductible) {
-        this.deductible = deductible;
-    }
-
     @Override
     public Driver getDriver() {
         return driver;
     }
 
-    @Override
     public double getBasePremium() {
         return basePremium;
     }
 
-    @Override
-    public void setBasePremium(double basePremium) {
-        this.basePremium = basePremium;
-    }
-
-    @Override
     public double getTax() {
         return tax;
-    }
-
-    public void setTax(double tax) {
-        this.tax = tax;
     }
 }
 

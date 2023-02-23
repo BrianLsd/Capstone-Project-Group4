@@ -3,11 +3,9 @@ package capstone;
 import java.time.LocalDate;
 
 public abstract class Quote {
-    private Person driver;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private double BasePremium;
-    private double tax;
+    private final Person driver;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
     private final double totalPremium;
 
     public Quote(Person driver, double totalPremium) {
@@ -33,33 +31,5 @@ public abstract class Quote {
 
     public Person getDriver() {
         return driver;
-    }
-
-    public void setDriver(Person driver) {
-        this.driver = driver;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public double getBasePremium() {
-        return BasePremium;
-    }
-
-    public void setBasePremium(double basePremium) {
-        BasePremium = basePremium;
-    }
-
-    public double getTax() {
-        return tax;
-    }
-
-    public void setTax(double tax) {
-        this.tax = tax;
     }
 }

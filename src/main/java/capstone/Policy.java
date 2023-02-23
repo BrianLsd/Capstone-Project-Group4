@@ -2,20 +2,20 @@ package capstone;
 
 import java.time.LocalDate;
 public abstract class Policy {
-    private final Driver driver;
+    private final Person insuredPerson;
     private final LocalDate startDate;
     private final LocalDate endDate;
     private final double totalPremium;
 
-    public Policy(Person driver, double totalPremium) {
-        this.driver = (Driver) driver;
+    public Policy(Person insuredPerson, double totalPremium) {
+        this.insuredPerson = insuredPerson;
         this.startDate = LocalDate.now();
         this.endDate = LocalDate.now().plusYears(1);
         this.totalPremium = totalPremium;
     }
 
-    public Driver getInsuredPerson() {
-        return driver;
+    public Person getInsuredPerson() {
+        return insuredPerson;
     }
 
     public LocalDate getStartDate() {
@@ -28,9 +28,5 @@ public abstract class Policy {
 
     public double getTotalPremium() {
         return totalPremium;
-    }
-
-    public Driver getDriver() {
-        return driver;
     }
 }
