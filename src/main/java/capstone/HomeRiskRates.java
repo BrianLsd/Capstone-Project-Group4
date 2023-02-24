@@ -1,6 +1,6 @@
-package capstone;
+package src.main.java.capstone;
 
-public record HomeRiskRates(Home home) {
+public record HomeRiskRates(double homeValue, int homeAge, HeatingType homeHeatingType, Location homelocation) {
     public double getPremium(){
         return 500;
     }
@@ -10,17 +10,17 @@ public record HomeRiskRates(Home home) {
     }
 
     public double getHomeValueFactor(){ // not sure
-        if (home.getValue() > 250000){
-            return 0.002 * (home.getValue() - 250000);
+        if (homeValue > 250000){
+            return 0.002 * (homeValue - 250000);
         } else {
             return 0;
         }
     }
 
     public double getHomeAgeFactor(){
-        if (home.getAge() > 50){
+        if (homeAge > 50){
             return 1.5;
-        } else if (home.getAge() > 25){
+        } else if (homeAge > 25){
             return 1.25;
         } else {
             return 1;
@@ -28,7 +28,7 @@ public record HomeRiskRates(Home home) {
     }
 
     public double getHeatingFactor(){
-        switch (home.getHeatingType()) {
+        switch (homeHeatingType) {
             case ELECTRIC, GAS, OTHER -> {
                 return 1;
             }
@@ -43,7 +43,7 @@ public record HomeRiskRates(Home home) {
     }
 
     public double getLocationFactor(){
-        switch (home.getLocation()){
+        switch (homelocation){
             case URBAN -> {
                 return 1;
             }

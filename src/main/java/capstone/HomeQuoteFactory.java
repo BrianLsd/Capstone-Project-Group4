@@ -1,19 +1,13 @@
-package capstone;
-
-import java.util.Scanner;
+package src.main.java.capstone;
 
 public record HomeQuoteFactory(Home home, HomeOwner homeOwner) {
-    public HomeQuote createHomeQuote (Scanner input){
-        System.out.println("Please provide your liability limit here: ");
-        double liabilityLimit = input.nextDouble();
-        System.out.println("Please provide your deductible here: ");
-        double deductible = input.nextDouble();
-        System.out.println("Please provide your contents insurance limit here: ");
-        double contentsInsuranceLimit = input.nextDouble();
-        System.out.println("Please provide your contents deductible here: ");
-        double contentsDeductible = input.nextDouble();
+    public HomeQuote createHomeQuote (){
+        double liabilityLimit = 2000000;
+        double deductible = 1000;
+        double contentsInsuranceLimit = 50000;
+        double contentsDeductible = 500;
 
-        HomeRiskRates homeRiskRates = new HomeRiskRates(home);
+        HomeRiskRates homeRiskRates = new HomeRiskRates(home.getValue(), home.getAge(), home.getHeatingType(), home.getLocation());
         double totalPremium = homeRiskRates.getPremium()
                 * homeRiskRates.getHomeAgeFactor() * homeRiskRates.getHeatingFactor() *
                 homeRiskRates.getLocationFactor() * homeRiskRates.getTax() + homeRiskRates.getHomeValueFactor();
