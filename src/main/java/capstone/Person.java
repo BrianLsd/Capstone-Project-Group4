@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 public abstract class Person {
     private int age;

@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 public class HomeOwner extends Person{
     private int age;

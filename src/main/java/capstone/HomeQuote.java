@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 public class HomeQuote extends Quote {
     private final HomeOwner homeOwner;

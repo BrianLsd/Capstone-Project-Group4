@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

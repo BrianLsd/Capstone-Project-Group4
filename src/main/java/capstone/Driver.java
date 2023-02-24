@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 public class Driver extends Person {
 

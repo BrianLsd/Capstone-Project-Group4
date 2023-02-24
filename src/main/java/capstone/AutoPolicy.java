@@ -1,4 +1,4 @@
-package capstone;
+package src.main.java.capstone;
 
 public class AutoPolicy extends Policy {
     private final Driver driver;
