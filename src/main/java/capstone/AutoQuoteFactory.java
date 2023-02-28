@@ -1,15 +1,12 @@
-package src.main.java.capstone;
+package capstone;
+public class AutoQuoteFactory{
+    private AutoQuoteFactory(){}
 
-public record AutoQuoteFactory(Vehicle vehicle, Driver driver) {
-
-    public AutoQuote createAutoQuote() {
-        double liabilityLimit = 200000;
-        double deductible = 500;
-
-        AutoRiskRates autoRiskRates = new AutoRiskRates(vehicle.getYear(), driver.getAge(), driver.getNumberAccidents());
-        // Driver driver, Vehicle vehicle, double liabilityLimit,double deductible, double totalPremium
-        double totalPremium = autoRiskRates.getPremium() * autoRiskRates.getDriverAgeFactor()
-                * autoRiskRates.getAccidentsFactor() * autoRiskRates.getVehicleAgeFactor() * autoRiskRates.getTax();
-        return new AutoQuote(driver, vehicle, liabilityLimit, deductible, totalPremium);
+    public static AutoQuote createAutoQuote(Vehicle vehicle, Driver driver){
+        double totalPremium = AutoRiskRates.getPremium() * AutoRiskRates.getDriverAgeFactor(driver.getAge()) *
+                AutoRiskRates.getAccidentsFactor(driver.getNumberAccidents()) * AutoRiskRates.getVehicleAgeFactor(vehicle.getYear())
+                * AutoRiskRates.getTax();
+        return new AutoQuote.Builder(driver, vehicle, 1000000, 500, AutoRiskRates.getPremium(),
+                AutoRiskRates.getTax(), totalPremium).build();
     }
 }

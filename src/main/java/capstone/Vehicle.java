@@ -1,4 +1,4 @@
-package src.main.java.capstone;
+package capstone;
 
 public class Vehicle {
 

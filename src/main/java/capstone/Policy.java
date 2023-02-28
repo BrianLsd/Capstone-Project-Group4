@@ -1,4 +1,4 @@
-package src.main.java.capstone;
+package capstone;
 
 import java.time.LocalDate;
 public abstract class Policy {

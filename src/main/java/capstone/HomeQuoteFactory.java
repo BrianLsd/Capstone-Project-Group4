@@ -1,17 +1,11 @@
-package src.main.java.capstone;
+package capstone;
+public class HomeQuoteFactory{
+    private HomeQuoteFactory(){}
 
-public record HomeQuoteFactory(Home home, HomeOwner homeOwner) {
-    public HomeQuote createHomeQuote (){
-        double liabilityLimit = 2000000;
-        double deductible = 1000;
-        double contentsInsuranceLimit = 50000;
-        double contentsDeductible = 500;
-
-        HomeRiskRates homeRiskRates = new HomeRiskRates(home.getValue(), home.getAge(), home.getHeatingType(), home.getLocation());
-        double totalPremium = homeRiskRates.getPremium()
-                * homeRiskRates.getHomeAgeFactor() * homeRiskRates.getHeatingFactor() *
-                homeRiskRates.getLocationFactor() * homeRiskRates.getTax() + homeRiskRates.getHomeValueFactor();
-        return new HomeQuote(homeOwner, home, totalPremium, liabilityLimit, deductible, contentsInsuranceLimit, contentsDeductible);
+    public static HomeQuote createHomeQuote(Home home, HomeOwner homeOwner){
+        double totalPremium = (HomeRiskRates.getPremium() + HomeRiskRates.getHomeValueFactor(home.getValue())) *  HomeRiskRates.getHomeAgeFactor(home.getAge())
+                * HomeRiskRates.getHeatingFactor(home.getHeatingType()) * HomeRiskRates.getLocationFactor(home.getLocation()) * HomeRiskRates.getTax();
+        return new HomeQuote.Builder(homeOwner, home, 2000000, 1000, 50000, 500,
+                HomeRiskRates.getPremium(), HomeRiskRates.getTax(), totalPremium).build();
     }
 }
-

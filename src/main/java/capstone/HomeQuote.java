@@ -1,4 +1,4 @@
-package src.main.java.capstone;
+package capstone;
 
 public class HomeQuote extends Quote {
     private final HomeOwner homeOwner;
@@ -10,17 +10,16 @@ public class HomeQuote extends Quote {
     private final double basePremium;
     private final double tax;
 
-    public HomeQuote(HomeOwner homeOwner, Home home,double totalPremium, double liabilityLimit,
-                     double deductible, double contentsInsuranceLimit, double contentsDeductible) {
-        super(homeOwner, totalPremium);
-        this.homeOwner = homeOwner;
-        this.home = home;
-        this.contentsInsuranceLimit = contentsInsuranceLimit;
-        this.contentsDeductible = contentsDeductible;
-        this.liabilityLimit = liabilityLimit;
-        this.deductible = deductible;
-        this.basePremium = 500;
-        this.tax = 1.15;
+    private HomeQuote(Builder builder) {
+        super(builder.homeOwner, builder.totalPremium);
+        this.homeOwner = builder.homeOwner;
+        this.home = builder.home;
+        this.contentsInsuranceLimit = builder.contentsInsuranceLimit;
+        this.contentsDeductible = builder.contentsDeductible;
+        this.liabilityLimit = builder.liabilityLimit;
+        this.deductible = builder.deductible;
+        this.basePremium =builder.basePremium;
+        this.tax = builder.tax;
     }
 
     public Home getHome() {
@@ -53,6 +52,36 @@ public class HomeQuote extends Quote {
 
     public HomeOwner getHomeOwner() {
         return homeOwner;
+    }
+
+    public static class Builder {
+        private final HomeOwner homeOwner;
+        private final Home home;
+        private final double liabilityLimit;
+        private final double deductible;
+        private final double contentsInsuranceLimit;
+        private final double contentsDeductible;
+        private final double totalPremium;
+        private final double basePremium;
+        private final double tax;
+
+        public Builder(HomeOwner homeOwner, Home home,double liabilityLimit, double deductible,
+                       double contentsInsuranceLimit, double contentsDeductible, double basePremium,
+                       double tax, double totalPremium){
+            this.homeOwner = homeOwner;
+            this.home = home;
+            this.liabilityLimit = liabilityLimit;
+            this.deductible = deductible;
+            this.contentsInsuranceLimit = contentsInsuranceLimit;
+            this.contentsDeductible = contentsDeductible;
+            this.basePremium = basePremium;
+            this.tax = tax;
+            this.totalPremium = totalPremium;
+        }
+
+        public HomeQuote build(){
+            return new HomeQuote(this);
+        }
     }
 }
 

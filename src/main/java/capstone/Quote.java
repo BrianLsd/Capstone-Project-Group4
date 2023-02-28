@@ -1,4 +1,4 @@
-package src.main.java.capstone;
+package capstone;
 
 import java.time.LocalDate;
 
@@ -18,7 +18,6 @@ public abstract class Quote {
     public Person getInsuredPerson() {
         return driver;
     }
-
     public LocalDate getStartDate() {
         return startDate;
     }

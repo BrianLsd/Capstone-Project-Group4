@@ -1,17 +1,18 @@
-package src.main.java.capstone;
+package capstone;
 
 import java.time.Year;
 
-public record AutoRiskRates(int vehicleYear, int driverAge, int driverAccidents) {
-    public double getPremium(){
+public class AutoRiskRates {
+    private AutoRiskRates(){}
+    public static double getPremium(){
         return 750;
     }
 
-    public double getTax(){
+    public static double getTax(){
         return 1.15;
     }
 
-    public double getDriverAgeFactor(){
+    public static double getDriverAgeFactor(double driverAge){
         if (driverAge >= 25){
             return 1;
         } else {
@@ -19,9 +20,9 @@ public record AutoRiskRates(int vehicleYear, int driverAge, int driverAccidents)
         }
     }
 
-    public double getAccidentsFactor(){
+    public static double getAccidentsFactor(int driverAccidents){
         if (driverAccidents > 2){
-            return 2;
+            return 2.5;
         } else if (driverAccidents > 1){
             return 1.25;
         } else {
@@ -29,7 +30,7 @@ public record AutoRiskRates(int vehicleYear, int driverAge, int driverAccidents)
         }
     }
 
-    public double getVehicleAgeFactor(){
+    public static double getVehicleAgeFactor(int vehicleYear){
         if (Year.now().minusYears(vehicleYear).getValue() > 10 ){
             return 2;
         } else if (Year.now().minusYears(vehicleYear).getValue() > 5){
