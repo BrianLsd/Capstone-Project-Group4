@@ -23,7 +23,7 @@ public class Vehicle {
 
     /**
      * Gets the year of a vehicle object
-     * @return year
+     * @return An integer representing the vehicle's year of make
      */
     public int getYear() {
         return year;
@@ -31,7 +31,7 @@ public class Vehicle {
 
     /**
      * Receives an integer parameter and sets it as the year of a vehicle object
-     * @param year
+     * @param year An integer representing the vehicle's year of make
      */
     public void setYear(int year) {
         this.year = year;
@@ -39,7 +39,7 @@ public class Vehicle {
 
     /**
      * Gets the model of a vehicle object
-     * @return
+     * @return A string representing the vehicle's model
      */
     public String getModel() {
         return model;
@@ -47,7 +47,7 @@ public class Vehicle {
 
     /**
      * Receives a String parameter and sets it as the model of a vehicle object
-     * @param model
+     * @param model A string representing the vehicle's model
      */
     public void setModel(String model) {
         this.model = model;
@@ -55,7 +55,7 @@ public class Vehicle {
 
     /**
      * Gets the make of a vehicle object
-     * @return
+     * @return A string representing the vehicle's make
      */
     public String getMake() {
         return make;
@@ -63,7 +63,7 @@ public class Vehicle {
 
     /**\
      * Receives a String parameter and sets it as the make of a vehicle object
-     * @param make
+     * @param make A string representing the vehicle's year of make
      */
     public void setMake(String make) {
         this.make = make;
