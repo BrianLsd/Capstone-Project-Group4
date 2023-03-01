@@ -29,22 +29,42 @@ public class Vehicle {
         return year;
     }
 
+    /**
+     * Receives an integer parameter and sets it as the year of a vehicle object
+     * @param year
+     */
     public void setYear(int year) {
         this.year = year;
     }
 
+    /**
+     * Gets the model of a vehicle object
+     * @return
+     */
     public String getModel() {
         return model;
     }
 
+    /**
+     * Receives a String parameter and sets it as the model of a vehicle object
+     * @param model
+     */
     public void setModel(String model) {
         this.model = model;
     }
 
+    /**
+     * Gets the make of a vehicle object
+     * @return
+     */
     public String getMake() {
         return make;
     }
 
+    /**\
+     * Receives a String parameter and sets it as the make of a vehicle object
+     * @param make
+     */
     public void setMake(String make) {
         this.make = make;
     }
