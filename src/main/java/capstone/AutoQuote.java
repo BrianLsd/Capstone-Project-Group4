@@ -118,7 +118,7 @@ public class AutoQuote extends Quote{
 
         /**
          * Initialize and get a new Auto Quote
-         * @return A Auto Quote object
+         * @return An Auto Quote object
          */
         public AutoQuote build(){
             return new AutoQuote(this);
