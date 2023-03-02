@@ -1,15 +1,32 @@
 package capstone;
 
+/**
+ * Takes in Home attributes and returns the corresponding home risk factors
+ */
 public class HomeRiskRates {
     private HomeRiskRates(){}
+
+    /**
+     * returns the base premium value
+     * @return 500 Base Premium for Home
+     */
     public static double getPremium(){
         return 500;
     }
 
+    /**
+     * returns the tax rate value
+     * @return 1.15 Tax Rate
+     */
     public static double getTax(){
         return 1.15;
     }
 
+    /**
+     * return the home value factor
+     * @param homeValue Home Value
+     * @return 0.002 * (homeValue - 250000) or 0 Home Value Factor
+     */
     public static double getHomeValueFactor(double homeValue){
         if (homeValue > 250000){
             return 0.002 * (homeValue - 250000);
@@ -18,6 +35,11 @@ public class HomeRiskRates {
         }
     }
 
+    /**
+     * returns the home age factor
+     * @param homeAge Age of Home
+     * @return 1, 1.25, or 1.5 Home Age Factor
+     */
     public static double getHomeAgeFactor(double homeAge){
         if (homeAge > 50){
             return 1.5;
@@ -28,6 +50,11 @@ public class HomeRiskRates {
         }
     }
 
+    /**
+     * returns the home heating type factor
+     * @param homeHeatingType Home Heating Type
+     * @return 1, 1.25, or 2 Home Heating Type factor
+     */
     public static double getHeatingFactor(HeatingType homeHeatingType){
         switch (homeHeatingType) {
             case ELECTRIC, GAS, OTHER -> {
@@ -43,6 +70,11 @@ public class HomeRiskRates {
         }
     }
 
+    /**
+     * returns the home location factor
+     * @param homelocation Home Location
+     * @return 1 or 1.15 Home Location Factor
+     */
     public static double getLocationFactor(Location homelocation){
         switch (homelocation){
             case URBAN -> {

@@ -9,5 +9,8 @@
         <module name="Capstone-Project-Group4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Capstone-Project-Group4" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
