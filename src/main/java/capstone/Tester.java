@@ -1,6 +1,11 @@
 package capstone;
 
+/**
+ * Instantiate examples of Driver, Vehicle, AutoQuote, AutoPolicy,
+ * HomeOwner, Home, HomeQuote, and HomePolicy objects.
+ */
 public class Tester {
+
     public static void main(String[] args) {
 
         // example persons

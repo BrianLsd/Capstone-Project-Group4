@@ -25,7 +25,7 @@ public abstract class Policy {
 
     /**
      * Gets the insured person object of the Policy object
-     * @return A Person object representing a policy's insured person
+     * @return insuredPerson A Person object representing a policy's insured person
      */
     public Person getInsuredPerson() {
         return insuredPerson;
@@ -33,7 +33,7 @@ public abstract class Policy {
 
     /**
      * Gets the start date of the Policy object
-     * @return A date object representing the start date of a Policy object
+     * @return startDate A date object representing the start date of a Policy object
      */
     public LocalDate getStartDate() {
         return startDate;
@@ -41,7 +41,7 @@ public abstract class Policy {
 
     /**
      * Gets the end date of the Policy object
-     * @return A date object representing the end date of a Policy object
+     * @return endDate A date object representing the end date of a Policy object
      */
     public LocalDate getEndDate() {
         return endDate;
@@ -49,7 +49,7 @@ public abstract class Policy {
 
     /**
      * Gets the total premium value of the Policy object
-     * @return
+     * @return totalPremium The total premium of the Policy object
      */
     public double getTotalPremium() {
         return totalPremium;
