@@ -1,7 +1,7 @@
 package capstone;
 
 /**
- * Creates Accident objects having a date
+ * Creates Accident objects having a date object and at fault driver object
  */
 public class Accidents {
 
@@ -18,7 +18,7 @@ public class Accidents {
 
     /**
      * Gets the date of an accident object
-     * @return A string representing the accident's date
+     * @return date A string representing the accident's date
      */
     public String getDate() {
         return date;
@@ -34,17 +34,15 @@ public class Accidents {
 
     /**
      * Gets the at fault driver for this accident
-     * @return A Driver object representing the at-fault driver an accident object
+     * @return atFaultDriver A Driver object representing the at fault driver of an accident object
      */
     public Driver getAtFaultDriver() {
         return atFaultDriver;
     }
 
     /**
-     * Receives a Driver object as parameter and sets it as the at-fault driver for an
-     * ...accident object
-     * @param atFaultDriver A Driver object representing the at-fault driver for an
-     *                      accident object.
+     * Receives a Driver object as parameter and sets it as the at fault driver for an accident object
+     * @param atFaultDriver A Driver object representing the at fault driver for an accident object.
      */
     public void setAtFaultDriver(Driver atFaultDriver) {
         this.atFaultDriver = atFaultDriver;
